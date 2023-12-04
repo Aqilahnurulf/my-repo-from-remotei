@@ -1,11 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+import 'package:flutter/material.dart';
+import 'package:seven/profile.dart';
+
+class Dashboard extends StatelessWidget {
+  const Dashboard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Dashboard"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const Profile(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.people),
+          ),
+        ],
+      ),
+      body: Container(
+        padding: const EdgeInsets.all(20.0),
+        child: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text("Selamat Datang di dashboard"),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+} 
